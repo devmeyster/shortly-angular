@@ -10,6 +10,14 @@ module.exports = function (app, express) {
 
   app.use(morgan('dev'));
   app.use(bodyParser.urlencoded({extended: true}));
+  app.use(function(req, res, next) {
+    var data = ''
+    req.on('data', function (chunk) {
+      data += chunk;
+    });
+    req.on('end', function () { console.log('request body', data); })
+    next();
+  })
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../../client'));
 
