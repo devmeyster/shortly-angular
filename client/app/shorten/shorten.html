@@ -2,10 +2,12 @@
 <!-- Your code here -->
   <a ng-href="/#/links">All Links</a>
   <a ng-href="/#/shorten">Shorten</a>
-
-  <input ng-model = "url">
-  <button ng-click= "addLink(url)">Add URL </button>
-
+  <form name="urlForm">
+    <input type="url" name="url" ng-model = "url">
+    <p ng-show="urlForm.url.$invalid">Enter a real url!</p>
+    <button ng-click= "addLink(url)">Add URL </button>
+    <div ng-show="link.url" url-Link></div>
+  </form>
 </div>
 
 

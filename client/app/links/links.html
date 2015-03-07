@@ -5,10 +5,7 @@
   <input ng-model="search.$" placeholder="search">
   <ul>
     <li ng-repeat="link in data.links | filter:search | orderBy:'-visits'">
-      <div>{{link.title}}</div>
-      <div>{{link.url}}</div>
-      <a ng-href="{{link.base_url + '/api/links/' + link.code}}">{{link.base_url + "/api/links/" + link.code}}</a>
-      <div>{{link.visits}}</div>
+      <div url-Link></div>
     </li>
   </ul>
 </div>

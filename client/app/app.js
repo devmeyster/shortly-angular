@@ -1,5 +1,6 @@
 angular.module('shortly', [
   'shortly.services',
+  'shortly.directives',
   'shortly.links',
   'shortly.shorten',
   'shortly.auth',
