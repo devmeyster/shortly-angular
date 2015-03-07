@@ -1,11 +1,14 @@
 <div id='container'>
   <!-- Your html here -->
-
+  <a ng-href="/#/links">All Links</a>
+  <a ng-href="/#/shorten">Shorten</a>
+  <input ng-model="search.$" placeholder="search">
   <ul>
-    <li ng-repeat="link in data.links">
+    <li ng-repeat="link in data.links | filter:search | orderBy:'-visits'">
       <div>{{link.title}}</div>
       <div>{{link.url}}</div>
-      <a ng-href="{{link.base_url + '/' + link.code}}">{{link.base_url + "/" + link.code}}</a>
+      <a ng-href="{{link.base_url + '/api/links/' + link.code}}">{{link.base_url + "/api/links/" + link.code}}</a>
+      <div>{{link.visits}}</div>
     </li>
   </ul>
 </div>
