@@ -1,7 +1,7 @@
 <div id='container'>
 <!-- Your code here -->
-  <a ng-href="/#/links">All Links</a>
-  <a ng-href="/#/shorten">Shorten</a>
+  <a ui-sref="links">All Links</a>
+  <a ui-sref="shorten">Shorten</a>
   <form name="urlForm">
     <input type="url" name="url" ng-model = "url">
     <p ng-show="urlForm.url.$invalid">Enter a real url!</p>

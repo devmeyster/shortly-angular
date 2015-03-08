@@ -5,17 +5,12 @@ var mongoose = require('mongoose'),
 
 
 var UserSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
 
-  password: {
+  githubId: {
     type: String,
-    required: true
-  },
-  salt: String
+    unique: true,
+  }
+
 });
 
 UserSchema.methods.comparePasswords = function (candidatePassword) {

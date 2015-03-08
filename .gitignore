@@ -3,7 +3,7 @@
 .LSOverride
 azure.err
 iisnode.yml
-
+server/githubcred.js
 # Icon must ends with two \r.
 Icon
 
